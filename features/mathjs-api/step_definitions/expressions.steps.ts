@@ -3,7 +3,7 @@ import { Ensure, equals, property } from '@serenity-js/assertions';
 import { Actor } from '@serenity-js/core';
 import { LastResponse } from '@serenity-js/rest';
 
-import { RequestEvaluation } from '../../src/maths-api/RequestEvaluation';
+import { RequestEvaluation } from '../../../src/maths-api/RequestEvaluation';
 
 When('{actor} requests evaluation of {}', (actor: Actor, expression: string) =>
     actor.attemptsTo(
