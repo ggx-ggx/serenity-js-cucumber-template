@@ -1,0 +1,46 @@
+{
+  "environments": {
+    "local": {
+      "baseUrl": "http://localhost:3000",
+      "mathApiUrl": "http://api.mathjs.org/v4/",
+      "users": {
+        "admin1": {
+          "username": "admin1_local",
+          "password": "pass_local",
+          "description": "Full access admin user with read and write permissions"
+        },
+        "admin2": {
+          "username": "admin2_local",
+          "password": "pass_local",
+          "description": "Read-only admin user"
+        },
+        "customer1": {
+          "username": "cust1_local",
+          "password": "pass_local",
+          "description": "Standard customer user with read access"
+        }
+      }
+    },
+    "dev": {
+      "baseUrl": "https://dev-api.example.com",
+      "mathApiUrl": "http://api.mathjs.org/v4/",
+      "users": {
+        "admin1": {
+          "username": "admin1_dev",
+          "password": "pass_dev",
+          "description": "Full access admin user with read and write permissions"
+        },
+        "admin2": {
+          "username": "admin2_dev",
+          "password": "pass_dev",
+          "description": "Read-only admin user"
+        },
+        "customer1": {
+          "username": "cust1_dev",
+          "password": "pass_dev",
+          "description": "Standard customer user with read access"
+        }
+      }
+    }
+  }
+} 

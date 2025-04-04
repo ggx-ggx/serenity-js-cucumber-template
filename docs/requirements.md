@@ -11,52 +11,116 @@ Requirements are listed in the order they should be implemented. Each requiremen
   - Environment-specific settings
   - Profile-specific users and credentials
 - Example profile structure:
-  ```yaml
-  local:
-    apiUrl: http://localhost:3000
-    users:
-      admin:
-        username: local_admin
-        password: local_pass
-      customer:
-        username: local_cust
-        password: local_pass
-  dev:
-    apiUrl: https://dev-api.example.com
-    users:
-      admin:
-        username: dev_admin
-        password: dev_pass
-      customer:
-        username: dev_cust
-        password: dev_pass
-  uat:
-    apiUrl: https://uat-api.example.com
-    users:
-      admin:
-        username: uat_admin
-        password: uat_pass
-      customer:
-        username: uat_cust
-        password: uat_pass
-  stg:
-    apiUrl: https://stg-api.example.com
-    users:
-      admin:
-        username: stg_admin
-        password: stg_pass
-      customer:
-        username: stg_cust
-        password: stg_pass
-  prd:
-    apiUrl: https://api.example.com
-    users:
-      admin:
-        username: prd_admin
-        password: prd_pass
-      customer:
-        username: prd_cust
-        password: prd_pass
+  ```json
+  {
+    "environments": {
+      "local": {
+        "baseUrl": "http://localhost:3000",
+        "mathApiUrl": "http://api.mathjs.org/v4/",
+        "users": {
+          "admin1": {
+            "username": "admin1_local",
+            "password": "pass_local",
+            "description": "Full access admin user with read and write permissions"
+          },
+          "admin2": {
+            "username": "admin2_local",
+            "password": "pass_local",
+            "description": "Read-only admin user"
+          },
+          "customer1": {
+            "username": "cust1_local",
+            "password": "pass_local",
+            "description": "Standard customer user with read access"
+          }
+        }
+      },
+      "dev": {
+        "baseUrl": "https://dev-api.example.com",
+        "mathApiUrl": "http://api.mathjs.org/v4/",
+        "users": {
+          "admin1": {
+            "username": "admin1_dev",
+            "password": "pass_dev",
+            "description": "Full access admin user with read and write permissions"
+          },
+          "admin2": {
+            "username": "admin2_dev",
+            "password": "pass_dev",
+            "description": "Read-only admin user"
+          },
+          "customer1": {
+            "username": "cust1_dev",
+            "password": "pass_dev",
+            "description": "Standard customer user with read access"
+          }
+        }
+      },
+      "uat": {
+        "baseUrl": "https://uat-api.example.com",
+        "mathApiUrl": "http://api.mathjs.org/v4/",
+        "users": {
+          "admin1": {
+            "username": "admin1_uat",
+            "password": "pass_uat",
+            "description": "Full access admin user with read and write permissions"
+          },
+          "admin2": {
+            "username": "admin2_uat",
+            "password": "pass_uat",
+            "description": "Read-only admin user"
+          },
+          "customer1": {
+            "username": "cust1_uat",
+            "password": "pass_uat",
+            "description": "Standard customer user with read access"
+          }
+        }
+      },
+      "stg": {
+        "baseUrl": "https://stg-api.example.com",
+        "mathApiUrl": "http://api.mathjs.org/v4/",
+        "users": {
+          "admin1": {
+            "username": "admin1_stg",
+            "password": "pass_stg",
+            "description": "Full access admin user with read and write permissions"
+          },
+          "admin2": {
+            "username": "admin2_stg",
+            "password": "pass_stg",
+            "description": "Read-only admin user"
+          },
+          "customer1": {
+            "username": "cust1_stg",
+            "password": "pass_stg",
+            "description": "Standard customer user with read access"
+          }
+        }
+      },
+      "prd": {
+        "baseUrl": "https://api.example.com",
+        "mathApiUrl": "http://api.mathjs.org/v4/",
+        "users": {
+          "admin1": {
+            "username": "admin1_prd",
+            "password": "pass_prd",
+            "description": "Full access admin user with read and write permissions"
+          },
+          "admin2": {
+            "username": "admin2_prd",
+            "password": "pass_prd",
+            "description": "Read-only admin user"
+          },
+          "customer1": {
+            "username": "cust1_prd",
+            "password": "pass_prd",
+            "description": "Standard customer user with read access"
+          }
+        }
+      }
+    }
+  }
   ```
 
 ## 2. Shared Test Setup
