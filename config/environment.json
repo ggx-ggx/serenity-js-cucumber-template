@@ -4,42 +4,28 @@
       "baseUrl": "http://localhost:3000",
       "mathApiUrl": "http://api.mathjs.org/v4/",
       "users": {
-        "admin1": {
-          "username": "admin1_local",
-          "password": "pass_local",
-          "description": "Full access admin user with read and write permissions"
-        },
-        "admin2": {
-          "username": "admin2_local",
-          "password": "pass_local",
-          "description": "Read-only admin user"
-        },
-        "customer1": {
-          "username": "cust1_local",
-          "password": "pass_local",
-          "description": "Standard customer user with read access"
-        }
+        "NewCust1": {"username": "newcust1_local", "password": "pass_local", "description": "New customer user"},
+        "EuroCust1": {"username": "eurocust1_local", "password": "pass_local", "description": "European customer user"},
+        "EuroGoldUser": {"username": "eurogold_local", "password": "pass_local", "description": "European gold tier user"},
+        "AdminUser": {"username": "admin_local", "password": "pass_local", "description": "System administrator"},
+        "CompanyAminUser": {"username": "companyadmin_local", "password": "pass_local", "description": "Company administrator"},
+        "CompanySupportUser": {"username": "companysupport_local", "password": "pass_local", "description": "Company support user"},
+        "NotLoggedInUser1": {"username": "notlogged1_local", "password": "pass_local", "description": "Not logged in user 1", "no_token": true},
+        "NotLoggedInUser2": {"username": "notlogged2_local", "password": "pass_local", "description": "Not logged in user 2", "no_token": true}
       }
     },
     "dev": {
       "baseUrl": "https://dev-api.example.com",
       "mathApiUrl": "http://api.mathjs.org/v4/",
       "users": {
-        "admin1": {
-          "username": "admin1_dev",
-          "password": "pass_dev",
-          "description": "Full access admin user with read and write permissions"
-        },
-        "admin2": {
-          "username": "admin2_dev",
-          "password": "pass_dev",
-          "description": "Read-only admin user"
-        },
-        "customer1": {
-          "username": "cust1_dev",
-          "password": "pass_dev",
-          "description": "Standard customer user with read access"
-        }
+        "NewCust1": {"username": "newcust1_dev", "password": "pass_dev", "description": "New customer user"},
+        "EuroCust1": {"username": "eurocust1_dev", "password": "pass_dev", "description": "European customer user"},
+        "EuroGoldUser": {"username": "eurogold_dev", "password": "pass_dev", "description": "European gold tier user"},
+        "AdminUser": {"username": "admin_dev", "password": "pass_dev", "description": "System administrator"},
+        "CompanyAminUser": {"username": "companyadmin_dev", "password": "pass_dev", "description": "Company administrator"},
+        "CompanySupportUser": {"username": "companysupport_dev", "password": "pass_dev", "description": "Company support user"},
+        "NotLoggedInUser1": {"username": "notlogged1_dev", "password": "pass_dev", "description": "Not logged in user 1", "no_token": true},
+        "NotLoggedInUser2": {"username": "notlogged2_dev", "password": "pass_dev", "description": "Not logged in user 2", "no_token": true}
       }
     }
   }

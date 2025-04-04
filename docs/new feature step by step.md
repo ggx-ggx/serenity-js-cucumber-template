@@ -2,6 +2,35 @@
 
 This guide walks you through the process of adding a new feature to the test suite, using the mathjs-api as a reference example.
 
+## 0. User Configuration (if needed)
+
+If your feature requires new user types, you must add them to all environments in `config/environment.json`:
+
+```json
+{
+  "environments": {
+    "local": {
+      "users": {
+        "NewUserType": {"username": "newuser_local", "password": "pass_local", "description": "Description of the user type"}
+      }
+    },
+    "dev": {
+      "users": {
+        "NewUserType": {"username": "newuser_dev", "password": "pass_dev", "description": "Description of the user type"}
+      }
+    }
+    // ... other environments
+  }
+}
+```
+
+Important notes about user configuration:
+- Add the same user type to ALL environments (local, dev, uat, stg, prd)
+- Keep the user key consistent across environments
+- Include username, password, and description for each user
+- For users that should not receive authentication tokens, add `"no_token": true`
+- Use compressed single-line formatting for better readability
+
 ## 1. Create Feature File Structure
 
 Create a new directory for your API under `features/` following this structure:
