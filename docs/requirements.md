@@ -281,9 +281,9 @@ Then I should get response with status 200 and partially matching:
       └── automation/
           └── json/
               └── math-api/
-                  ├── au__lu.json    # auth__loginuser
-                  ├── us__cu.json    # user__createuser
-                  └── cp__cc.json    # companyprofile__createcompany
+                  ├── au__loginuser.json
+                  ├── us__createuser.json
+                  └── cp__createcompany.json
   ```
 - Each JSON file should contain:
   ```json
@@ -300,11 +300,11 @@ Then I should get response with status 200 and partially matching:
   }
   ```
 - File naming convention:
-  - Format: `groupcode__methodcode.json`
+  - Format: `groupcode__methodname.json`
   - Use abbreviations:
     - GroupCode: 2 characters (e.g., au for auth, cp for companyprofile)
-    - MethodCode: 2 characters (e.g., lu for loginuser, cc for createcompany)
+    - MethodName: full method name in lowercase (e.g., loginuser, createcompany)
   - Examples:
-    - `au__lu.json` = auth__loginuser
-    - `us__cu.json` = user__createuser
-    - `cp__cc.json` = companyprofile__createcompany
+    - `au__loginuser.json` = auth__loginuser
+    - `us__createuser.json` = user__createuser
+    - `cp__createcompany.json` = companyprofile__createcompany
