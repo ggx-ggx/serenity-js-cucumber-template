@@ -1,20 +1,14 @@
 {
-  "name": "@serenity-js/serenity-js-cucumber-template",
+  "name": "apitestframework",
   "version": "1.0.0",
-  "description": "",
+  "description": "API Test Framework using Serenity/JS and Cucumber",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf target",
-    "test": "failsafe clean test:execute test:report",
+    "test": "failsafe clean test:execute",
     "test:execute": "cucumber-js",
-    "test:report": "serenity-bdd run --features ./features",
-    "start": "mkdirp target/site/serenity && npx http-server -p 8080 target/site/serenity -s -o",
     "lint": "eslint --ext ts --config .eslintrc.js .",
     "lint:fix": "npm run lint -- --fix"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/serenity-js/serenity-js-cucumber-template.git"
   },
   "keywords": [
     "serenity-js",
@@ -22,12 +16,8 @@
     "cucumber",
     "testing"
   ],
-  "author": "Jan Molak <jan.molak@serenity.io>",
+  "author": "DEV TEST <dev.test@example.com>",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/serenity-js/serenity-js/issues"
-  },
-  "homepage": "https://serenity-js.org",
   "engines": {
     "node": "^18.12 || ^20 || ^22.0.0"
   },
@@ -38,7 +28,6 @@
     "@serenity-js/core": "^3.31.13",
     "@serenity-js/cucumber": "^3.31.13",
     "@serenity-js/rest": "^3.31.13",
-    "@serenity-js/serenity-bdd": "^3.31.13",
     "tiny-types": "^1.23.0"
   },
   "devDependencies": {
