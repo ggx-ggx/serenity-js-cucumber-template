@@ -7,7 +7,7 @@
     "clean": "rimraf target",
     "test": "failsafe clean test:execute",
     "test:execute": "cucumber-js",
-    "test:local": "npm test",
+    "test:local": "cross-env TEST_ENV=local npm test",
     "test:dev": "cross-env TEST_ENV=dev npm test",
     "test:uat": "cross-env TEST_ENV=uat npm test",
     "test:stg": "cross-env TEST_ENV=stg npm test",

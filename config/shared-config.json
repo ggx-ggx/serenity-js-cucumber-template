@@ -1,0 +1,11 @@
+{
+  "parallelLogin": {
+    "maxConcurrent": 10,
+    "retryAttempts": 3,
+    "retryDelayMs": 1000
+  },
+  "tokenStore": {
+    "type": "memory",
+    "expiryCheckIntervalMs": 60000
+  }
+} 

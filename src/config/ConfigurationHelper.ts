@@ -1,7 +1,24 @@
 import { Actor } from '@serenity-js/core';
 
+interface UserConfig {
+  password: string;
+  description: string;
+  no_token?: boolean;
+}
+
+interface EnvironmentConfig {
+  baseUrl: string;
+  mathApiUrl: string;
+  'login-svc-base-url': string;
+  users: Record<string, UserConfig>;
+}
+
+interface Config {
+  environments: Record<string, EnvironmentConfig>;
+}
+
 export class ConfigurationHelper {
-    private static config: any;
+    private static config: Config;
     private static environment: string;
 
     static initialize(worldParameters: any) {
@@ -17,7 +34,7 @@ export class ConfigurationHelper {
         }
 
         return {
-            username: envUsers[userKey].username,
+            username: userKey,
             password: envUsers[userKey].password
         };
     }
@@ -30,7 +47,11 @@ export class ConfigurationHelper {
         return this.config.environments[this.environment].mathApiUrl;
     }
 
-    static getActorPermissions(actorName: string): string[] {
-        return this.config.actorTypes[actorName].permissions;
+    static getLoginServiceUrl(): string {
+        return this.config.environments[this.environment]['login-svc-base-url'];
+    }
+
+    static getAllUsers(): Record<string, UserConfig> {
+        return this.config.environments[this.environment].users;
     }
 } 

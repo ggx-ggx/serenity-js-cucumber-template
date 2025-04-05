@@ -129,11 +129,8 @@ Requirements are listed in the order they should be implemented. Each requiremen
   - Log in multiple test users (up to 20) via API
   - Store authentication tokens in a shared configuration
   - Make tokens accessible across parallel test executions
-- Support different user types:
-  - AdminReadOnlyJohn
-  - SignedOutCust1
-  - SignedInCust2
-  - [Other user types to be defined]
+  - in shared object keep user with no_token property. and just keep its 'auth_token' as empty string or null. 
+
 
 ## 3. Login API Integration
 - Integrate provided local login API

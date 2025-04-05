@@ -8,38 +8,41 @@ Feature: Expressions
 
   Rule: One expression - one result
 
-    Scenario Outline: Basic expressions
+    Scenario Outline: Basic expressions with token check
 
       Single expression requests can be evaluated using the [GET endpoint](https://api.mathjs.org/#get).
 
-      When Sandra requests evaluation of <expression>
-      Then she should get <expected_result>
+      When NewCust1 requests evaluation of 2 + 3
+      Then NewCust1 should get single result 5
+      And NewCust1 token should be logged
 
       Examples: Basic operators
-        | expression | expected_result |
-        | 2 + 3      | 5               |
-        | 2 - 3      | -1              |
+        | actor            | expression | expected_result |
+        | NewCust1       | 2 + 3      | 5               |
+        | EuroCust1      | 2 - 3      | -1              |
+        | NotLoggedInUser1 | 2 * 2    | 4               |
 
       Examples: Order of operations
-        | expression | expected_result |
-        | 2 * 2 + 2  | 6               |
-        | 2 + 2 * 2  | 6               |
+        | actor            | expression | expected_result |
+        | NewCust1       | 2 * 2 + 2  | 6               |
+        | EuroCust1      | 2 + 2 * 2  | 6               |
 
   Rule: Multiple expressions - multiple results
 
-    Scenario: Multiple expressions
+    Scenario: Multiple expressions with token check
 
       Requests to evaluate multiple expression should be sent to the [POST endpoint](https://api.mathjs.org/#post).
 
-      When Sandra requests evaluation of:
+      When NewCust1 requests evaluation of:
         | expression |
         | 2 + 3      |
         | 2 - 3      |
         | 2 * 2 + 2  |
         | 2 + 2 * 2  |
-      Then she should get following results:
+      Then NewCust1 should get multiple results:
         | expected_result |
         | 5               |
         | -1              |
         | 6               |
         | 6               |
+      And NewCust1 token should be logged
