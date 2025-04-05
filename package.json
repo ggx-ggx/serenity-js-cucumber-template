@@ -33,6 +33,7 @@
     "@serenity-js/core": "^3.31.13",
     "@serenity-js/cucumber": "^3.31.13",
     "@serenity-js/rest": "^3.31.13",
+    "chalk": "^4.1.2",
     "tiny-types": "^1.23.0"
   },
   "devDependencies": {
